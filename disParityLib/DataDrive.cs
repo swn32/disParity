@@ -341,9 +341,9 @@ namespace disParity
           continue;
         }
         string subDir = Path.Combine(dir.FullName, d.Name);
-        if (subDir.Length >= MAX_FOLDER) 
-          LogFile.Log("Warning: skipping folder \"" + subDir + "\" because the path is too long.");
-        else
+        //if (subDir.Length >= MAX_FOLDER) 
+        //  LogFile.Log("Warning: skipping folder \"" + subDir + "\" because the path is too long.");
+        //else
           Scan(d, ignores, folderProgress);
         folderProgress.EndPhase();
       }
@@ -356,10 +356,10 @@ namespace disParity
         // an exception if the path is too long
         string fullName = Path.Combine(dir.FullName, f.Name);
         try {
-          if (fullName.Length >= MAX_PATH) {
-            LogFile.Log("Warning: skipping file \"" + fullName + "\" because the path is too long");
-            continue;
-          }
+          //if (fullName.Length >= MAX_PATH) {
+          //  LogFile.Log("Warning: skipping file \"" + fullName + "\" because the path is too long");
+          //  continue;
+          //}
           if (f.Attributes == (FileAttributes)(-1))
             continue;
           if (config.IgnoreHidden && (f.Attributes & FileAttributes.Hidden) != 0)
